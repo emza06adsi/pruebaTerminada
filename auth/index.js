@@ -5,7 +5,7 @@
  let secret = config.jwt.secret;
 
  function sign(data) {
-    return jwt.sign(data[0], secret,{ expiresIn: 100 });
+    return jwt.sign(data[0], secret,{ expiresIn: 300 });
 }
 
 function verify(token) {

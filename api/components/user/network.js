@@ -12,8 +12,8 @@ const router=express.Router();
 router.post('/insert',secure('update'),insert)
 router.get('/',secure('update'),listUsers)
 router.get('/:id',secure('update'),getUser)
-router.put('/update',secure('update'),updateUser)
-router.delete('/delete',secure('update'),deleteUser)
+router.post('/update',secure('update'),updateUser)
+router.post('/delete',secure('update'),deleteUser)
 
 
  function insert (req,res,next) {

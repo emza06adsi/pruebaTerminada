@@ -66,7 +66,24 @@ const createUser =(data) => {
 
           ], (err, result) => {
             if (err) return reject(err);
-            resolve(result);
+            connection.query(`insert into contacto
+            (
+            telefono,
+            telefono_celular,
+            telefono_contacto,
+            correo,
+            id_usuario
+            )values(?,?, ?,?,?);`,
+            [
+                data.telefono,
+                data.telefono_celular,
+                data.telefono_contacto,
+                data.correo,
+                data.numero_identificacion,
+             ], (err, result) => {
+               if (err) return reject(err);
+               resolve(result);
+           })
         })
 
     })
@@ -101,7 +118,24 @@ const updateUser=(data) => {
 
           ], (err, result) => {
             if (err) return reject(err);
+            connection.query(`
+            UPDATE contacto
+            SET
+            telefono = ?,
+            telefono_celular = ?,
+            telefono_contacto = ?,
+            correo = ?
+            WHERE id_usuario = ?;`,
+         [
+             data.telefono,
+             data.telefono_celular,
+             data.telefono_contacto,
+             data.correo,
+             data.numero_identificacion,
+          ], (err, result) => {
+            if (err) return reject(err);
             resolve(result);
+        })
         })
 
     })

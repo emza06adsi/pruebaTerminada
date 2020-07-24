@@ -23,15 +23,14 @@ module.exports = function (injectedStore) {
 async  function insert(data)
     {
        data.contraseña = await AUTH.upsert(data.contraseña)
-       await  store.createUser(data)
-       return  await store.createInfo(data)
+       return store.createUser(data)
     }
 
     
 async    function updateUser(data)
     {
-       await store.updateUser(data)
-       return await store.updateInfo(data) 
+        
+       return  store.updateUser(data) 
     }
     
     
