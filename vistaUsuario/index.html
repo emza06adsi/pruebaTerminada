@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="index.css" rel="stylesheet" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container-options">
+
+        <div class="options">
+            <h1>CONSULTAR API VORTEX</h1>
+            <h2>CONSULTAR API</h2>
+            <div class="butonAcces">
+
+                <button id="acces" type="button" class="butonAcces-btn" data-toggle="tooltip"
+                        title="ingresar usuario."/>
+                <img src="https://img.icons8.com/android/24/000000/key.png" />
+            </div>
+            <div class="formControl">
+                <div class="form-4">
+                    <input class="form-control" placeholder="id" id="idUsuario" data-toggle="tooltip"
+                        title="Id del usuario que desea consultar." type="number" />
+                    <input id="btnUsuarioUnidad" class="listUsuario" type="button" value="Listar un usuario" />
+                    <input id="btnListarUsuaarios" class="listUsuarios" type="button"
+                        value="Listar todos los usuarios" />
+                    <input id="btnCrearUsuario" class="crearUsuario" type="button" value="crear un usuario" />
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="btnConfirm">
+    </div>
+
+    <section class="modal" id="modal">
+
+        <article class="modal-overlay" id="modal-overlay">
+            <div>
+                <input type="button" style="background:#cb161d;" id="cerarModal" value="x" />
+            </div>
+            <div class="overlay-form">
+                <h3>INGRESAR</h3>
+                <div>
+                    <label for="idusuario">documento:</label>
+                    <input id="idusuario" value="" class="form-control" />
+                </div>
+                <div>
+                    <label for="Key">contraseña:</label>
+                    <input id="key" value="" type="password" class="form-control" />
+                </div>
+                <input type="button" id="ingresarData" class="listUsuarios" value="ingresar" />
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <section class="modal" id="modalUpsert">
+
+        <article class="modal-overlayUpsert" id="modal-overlayUpsert">
+            <div>
+                <input type="button" style="background:#cb161d;" id="CerarModalUpster" value="x" />
+            </div>
+            <div class="overlay-form">
+                <h3>Usuario</h3>
+                <div class="formUsuario">
+                    <article class="formUsuario-article">
+                        <label for="idusuario">Nombre:</label>
+                    <input id="nombreUsuario" type="text" value="" class="form-control" />
+                    
+                    </article>
+                    <article class="formUsuario-article">
+                        <label for="idusuario">Tipo identificaciòn:</label>
+                        <select id="tipo_identificacion" value="" class="form-control">
+                            <option value="c.c">c.c</option>
+                            <option value="c.e">c.e</option>
+                            <option value="t.c">t.c</option>
+                            <option value="n.i">n.i</option>
+                            
+                    
+                        </select>
+
+
+                    </article>
+                    <article class="formUsuario-article">
+                        <label for="idusuario">Numero identificaciòn:</label>
+                    <input id="numero_identificacion" type="number" value="" class="form-control" />
+                    
+                    </article>
+                    <article class="formUsuario-article">
+                        <label for="idusuario">Fecha ingreso:</label>
+                    <input id="fecha_ingreso" type="datetime-local" value="" class="form-control" />
+                    
+                    </article>
+                    <article class="formUsuario-article">
+                        <label for="idusuario">Salario:</label>
+                    <input id="salario" type="number" value="" class="form-control" />
+                    
+                    </article>
+                    
+                </div>
+                <div class="formUsuario">
+                    <article class="formUsuario-article">
+                        <label for="idusuario">Telefono:</label>
+                    <input id="telefono" type="number" value="" class="form-control" />
+                    
+                    </article>
+                    <article class="formUsuario-article">
+                        <label for="idusuario">Telefono celular:</label>
+                    <input id="telefono_celular" type="number" value="" class="form-control" />
+                    
+                    </article>
+                    <article class="formUsuario-article">
+                        <label for="idusuario">Telefono contacto:</label>
+                    <input id="telefono_contacto" type="number" value="" class="form-control" />
+                </article>
+                    <article class="formUsuario-article">
+                        <label for="idusuario">Correo:</label>
+                    <input id="correo" type="email" value="" class="form-control" />
+                    
+                    </article>
+                    
+                    <article class="formUsuario-article">
+                        <label for="idusuario">Contraseña:</label>
+                    <input id="contraseña" value="" type="text" class="form-control" />
+                    
+                    </article>
+                    
+                </div>
+                <article class="formUsuario-article">
+                   
+                <input type="button" id="ACTUALIZAR" class="listUsuario" value="ACTUALIZAR" />
+                <input type="button" id="CREAR" class="crearUsuario" value="CREAR" />
+            </article>
+                   
+            </div>
+
+        </article>
+
+    </section>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>

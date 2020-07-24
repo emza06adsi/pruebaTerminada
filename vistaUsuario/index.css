@@ -1,0 +1,241 @@
+.container-options {
+    margin: 25px 10% 0 10%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.butonAcces {
+    width: 80%;
+    display: flex;
+    flex-direction: row-reverse;
+    /*    background:red;*/
+   
+}
+.butonAcces-btn {
+    background: #0c6e84;
+    width: 50px;
+    height: 50px;
+    border-radius: 150px;
+    border: 3px solid #cb161d;
+    outline: 0;
+    cursor: pointer;
+    box-shadow: inset 0 -.2em rgba(0, 0, 0, .2);
+    transition: .2s;
+    will-change: transform;
+}
+.butonAcces-btn:active {
+    transform: scale(.9);
+}
+.options {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .options h1 {
+        font-size: 35px;
+        color: gray;
+    }
+
+    .options h2 {
+        font-size: 35px;
+        color: gray;
+    }
+
+.formControl {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.form-4{
+    display:flex;
+/*    flex-direction:column;*/
+/*    align-items:center;*/
+    align-content:center;
+}
+    .form-control {
+        margin-top: 10px;
+        margin-left: 5px;
+    }
+
+.form-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.listUsuario {
+    text-align: center;
+    padding: .6em .8em .8em;
+    border: none;
+    color: #00242c;
+    font-size: 16px;
+    background: #cb161d;
+    color: white;
+    margin: 5.2px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: inset 0 -.2em rgba(0, 0, 0, .2);
+    outline: 0;
+    transition: .2s;
+    will-change: transform;
+    width: 80%;
+}
+
+    .listUsuario:active {
+        transform: scale(.9);
+    }
+
+    .crearUsuario {
+        text-align: center;
+        padding: .6em .8em .8em;
+        border: none;
+        color: #00242c;
+        font-size: 16px;
+        background: #27cc27;
+        color: white;
+        margin: 5.2px;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: inset 0 -.2em rgba(0, 0, 0, .2);
+        outline: 0;
+        transition: .2s;
+        will-change: transform;
+        width: 80%;
+    }
+    
+        .crearUsuario:active {
+            transform: scale(.9);
+        }
+
+.listUsuarios {
+    text-align: center;
+    padding: .6em .8em .8em;
+    border: none;
+    color: #00242c;
+    font-size: 16px;
+    background: #0c6e84;
+    color: white;
+    margin: 5.2px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: inset 0 -.2em rgba(0, 0, 0, .2);
+    outline: 0;
+    transition: .2s;
+    will-change: transform;
+    width: 80%;
+}
+
+    .listUsuarios:active {
+        transform: scale(.9);
+    }
+.modal {
+    background: rgb(0, 0, 0,.8);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.8s ease-in;
+}
+
+    .modal.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+.modal-overlay {
+    width: 20%;
+    background-color: white;
+    animation: modalOut .8s forwards;
+    color: #000;
+    padding: 2%;
+    border-radius: 15px;
+    font-family: Arial;
+}
+
+.overlay-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@keyframes modalIn {
+    0% {
+        transform: translateY(-3000px);
+    }
+
+    60% {
+        transform: translateY(25px);
+    }
+
+    75% {
+        transform: translateY(-10px);
+    }
+
+    90% {
+        transform: translateY(5px);
+    }
+}
+
+/*@keyframes animationOut {*/
+@keyframes modalOut {
+    0% {
+        transform: translateY(5px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
+
+    75% {
+        transform: translateY(25px);
+    }
+
+    100% {
+        transform: translateY(-3000px);
+    }
+}
+.formUsuario{
+    display: flex;
+    
+}
+
+.formUsuario-article{
+    margin: 10px;
+}
+
+.modal-overlayUpsert{
+    width: 80%;
+    background-color: white;
+    animation: modalOut .8s forwards;
+    color: #000;
+    padding: 2%;
+    border-radius: 15px;
+    font-family: Arial;
+}
+
+
+
+.modalUpsert {
+    background: rgb(0, 0, 0,.8);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.8s ease-in;
+}
+
+    .modalUpsert.active {
+        opacity: 1;
+        visibility: visible;
+    }
