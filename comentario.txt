@@ -1,0 +1,27 @@
+Hola, les cuento rápida mente acerca del código:
+son dos programas sencillos uno es una API de node la cual se compone de las librerías de:
+"bcrypt": "^5.0.0",
+"body-parser": "^1.19.0",
+"express": "^4.17.1",
+"firebase": "^7.17.1",
+"jsonwebtoken": "^8.5.1",
+"mysql": "^2.18.1"
+
+el proyecto está dividido en carpetas
+
+está la carpeta storage que es en la que está el archivo con los querys,
+la carpeta network la cual tiene un archivo de error y otro de response
+para responder a las peticiones de red de los usuarios,
+la carpeta de auth que cumple con crear y verificar el jwt permitiendo asi que solo
+los usuarios puedan hacer uso de la API,
+y la capeta API está lo que sería el archivo index.js en el cual esta toda la configuración
+inicial y las carpetas auth y user:
+la carpeta auth sirve para crear los usuarios y para hacer el login
+su especialidad es encriptar las contraseñas por medio de bcrypt
+y por último la carpeta se user que es la que se encarga de crear el usuario, listar los usuarios,
+modificar los usuarios y borrar los usuarios. Aunque es una API sencilla es bastante detallada.
+
+El otro programa es una página web que está haciendo las peticiones a la API
+
+Este se compone de HTML, CSS, y JavaScript en ella hago uso del dom para mover
+la página con JS.
